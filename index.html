@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Sayan Bhowmik</title>
+
+    <link rel="StyleSheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/glyph.css">
+    <link rel="icon" href="media/x.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   
+    <script src="https://use.fontawesome.com/443e580a85.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easypiechart.min.js"></script>
+    
+    <script src="js/console.js"></script>
+    
+</head>
+
+<body oncontextmenu="return false">
+    <span class="intro-banner">
+    <div id="left-wing" class="col-md-6">
+       
+       <div id="left-container">
+        <center><img id="mypic" src="media/person.png">
+        <br><br>
+            <div id="myname" style="font-family:land">Sayan Bhowmik</div>
+            <div id="socl" style="margin-top:50px; margin-left:30px;">
+                <a href="http://www.fb.com/snbk97"><i class="fa fa-facebook"></i></a> &nbsp; &nbsp;
+                <a href="http://www.github.com/snbk97"><i class="fa fa-github"></i></a> &nbsp; &nbsp;
+                <a href="http://www.twitter.com/snbk97"><i class="fa fa-twitter"></i></a> &nbsp; &nbsp;
+            
+            </div></center>
+        <img src="media/down.png" onclick="magic_counter()" id="down" style="heigh:38px;width:38px;margin-left:45%;margin-top:10%" >
+            </div>
+            
+        </div>
+
+    <div id="right-wing" class="col-md-6" style="overflow-y:visible; overflow-x:hidden;"><center>
+        
+        
+        
+        <div style="font-family:simple;font-size:35px;margin-top:100px;">
+            <table>
+                <tr>
+                    <td><i class="fa fa-terminal"></i></td>
+    <td class="about-me-table">Programmer</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-headphones"></i></td>
+        <td class="about-me-table">Audiophile</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-cog"></i></td>
+        <td class="about-me-table">Geek</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-gamepad"></i></td>
+        <td class="about-me-table">Terrible Gamer</td>
+    </tr>
+    </table>
+    </div>
+
+
+    <img src="media/arrow2.png" style="height:13%;width:13%;margin-bottom:100px;margin-top:100px;">
+    
+    <div class="desc-title" id="about=me">About Me</div>
+    <div class="desc-data mm">
+        Hi ! I'm Sayan Bhowmik
+        <br> I love
+        <h>coding</h>. I want to
+        <h>solve</h> problems people face in their daily lives with the means of latest
+        <h>technology</h> and methods.</div>
+
+        <br>
+        <br> 
+    
+    <div class="desc-title">Skills</div>
+    <div class="desc-data">
+    <div class="container">
+      
+          <div class="chart" data-percent="80">HTML5<br></div>
+          <div class="chart" data-percent="60">CSS3<br></div>
+        <div class="chart" data-percent="10">JS<br></div>
+        </div>    
+          <div class="container">
+          <div class="chart" data-percent="70">C<br></div>
+          <div class="chart" data-percent="50">C++<br></div>
+          <div class="chart" data-percent="80">Python<br></div>
+        </div>
+            
+            
+        </div>
+    
+    </center>
+    </div>
+    </span>
+
+</body>
+
+<script type="text/javascript"> // main animation
+    right = document.getElementById("right-wing");
+    left = document.getElementById("left-wing");
+
+    function widener() {
+        width = window.innerWidth;
+        if (width < 1080) {
+            left.style.width = "100%";
+            right.style.width = "100%";
+
+        } else {
+            left.style.width = "50%";
+            right.style.width = "50%";
+            if (right.scrollTop > 250) {
+                left.style.width = "20%";
+                left.style.WebkitTransition = 'linear 0.3s';
+                left.style.MozTransition = 'linear 0.3s';
+                right.style.width = "80%";
+                right.style.WebkitTransition = 'linear 0.3s';
+                right.style.MozTransition = 'linear 0.3s';
+
+            } else {
+                left.style.width = "50%";
+                left.style.WebkitTransition = 'linear 0.3s';
+                left.style.MozTransition = 'linear 0.3s';
+                right.style.width = "50%";
+                right.style.WebkitTransition = 'linear 0.3s';
+                right.style.MozTransition = 'linear 0.3s';
+            }
+        }
+    }
+    right.onscroll = function () {widener()};
+    window.onresize = function () {widener()};
+    down =  document.getElementById("down");
+    counter = 0;
+    function magic_counter() {
+        counter++;
+        document.getElementById("myname").innerHTML = counter;
+        document.getElementById("myname").innerHTML = counter;
+    }
+
+</script>
+<script type="text/javascript">
+$(function() {
+  $('.chart').easyPieChart({
+    scaleColor: "#212121",
+    lineWidth: 20,
+    lineCap: 'round',
+    barColor: '#189aa5',
+    trackColor: "#333232",
+    size: 180,
+    animate: 500
+  });
+});
+
+</script>
+
+</html>
