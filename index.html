@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
 
+    <!-- Android-->
+    <meta name="theme-color" content="#189aa5" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#189aa5">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     <title>Sayan Bhowmik</title>
 
-    <link rel="StyleSheet" href="css/main.css" type="text/css">
+    <link rel="StyleSheet" href="css/main.min.css" type="text/css">
     <link rel="stylesheet" href="css/glyph.css">
     <link rel="icon" href="media/x.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -27,7 +35,7 @@
     <div id="left-container">
         <center><img id="mypic" src="media/me.jpg">
         <br><br>
-            <div id="myname" style="font-family:land">Sayan Bhowmik</div>
+            <div id="myname" style="font-family:pacifico">Sayan Bhowmik</div>
             <div id="socl" style="margin-top:50px; margin-left:30px;">
                 <a href="http://www.fb.com/snbk97"><i class="fa fa-facebook"></i></a> &nbsp; &nbsp;
                 <a href="http://www.github.com/snbk97"><i class="fa fa-github"></i></a> &nbsp; &nbsp;
@@ -105,75 +113,7 @@
 
 </body>
 
-<script type="text/javascript">
-    // main animation
-    right = document.getElementById("right-wing");
-    left = document.getElementById("left-wing");
-    up = document.getElementById("up");
-    down = document.getElementById("down");
-    right.style.display = "";
-    left.style.display = "";
-    counter = 1;
-
-    function magic_counter() {
-        counter++;
-        if (counter % 2 == 0) {
-            left.style.display = "none";
-            right.style.display = "";
-        } else {
-            right.style.display = "none";
-            left.style.display = "";
-        }
-    }
-
-    function widener() {
-        width = window.innerWidth;
-
-        if (width < 1080) {
-            left.style.width = "100%";
-            right.style.width = "100%";
-            up.onclick = function () {
-                magic_counter()
-            };
-            down.onclick = function () {
-                magic_counter()
-            };
-
-        } else {
-            right.style.display = "";
-            left.style.display = "";
-
-            left.style.width = "50%";
-            right.style.width = "50%";
-            if (right.scrollTop > 250) {
-                left.style.width = "20%";
-                left.style.WebkitTransition = 'linear 0.3s';
-                left.style.MozTransition = 'linear 0.3s';
-                right.style.width = "80%";
-                right.style.WebkitTransition = 'linear 0.3s';
-                right.style.MozTransition = 'linear 0.3s';
-
-            } else {
-                left.style.width = "50%";
-                left.style.WebkitTransition = 'linear 0.3s';
-                left.style.MozTransition = 'linear 0.3s';
-                right.style.width = "50%";
-                right.style.WebkitTransition = 'linear 0.3s';
-                right.style.MozTransition = 'linear 0.3s';
-            }
-        }
-    }
-
-    right.onscroll = function () {
-        widener()
-    };
-    window.onresize = function () {
-        widener()
-    };
-    window.onload = function () {
-        widener()
-    };
-</script>
+<script type="text/javascript" src="js/main.min.js"></script>
 <script type="text/javascript">
     $(function () {
         $('.chart').easyPieChart({
