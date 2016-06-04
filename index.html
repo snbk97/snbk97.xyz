@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="css/glyph.css">
     <link rel="icon" href="media/x.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-   
+
     <script src="https://use.fontawesome.com/443e580a85.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.easypiechart.min.js"></script>
-    
+
     <script src="js/console.js"></script>
-    
+
 </head>
 
 <body oncontextmenu="return false">
@@ -33,16 +33,18 @@
                 <a href="http://www.twitter.com/snbk97"><i class="fa fa-twitter"></i></a> &nbsp; &nbsp;
             
             </div></center>
-        <img src="media/down.png" onclick="magic_counter()" id="down" style="heigh:38px;width:38px;margin-left:45%;margin-top:10%" >
+            <center>
+    <img src="media/down.png" id="down" style="heigh:38px;width:38px;margin-top:10%" >
+           </center>
             </div>
             
         </div>
 
     <div id="right-wing" class="col-md-6" style="overflow-y:visible; overflow-x:hidden;"><center>
         
+   <img src="media/up.png" id="up" style="heigh:38px;width:38px;margin-top:10%" >
         
-        
-        <div style="font-family:simple;font-size:35px;margin-top:100px;">
+    <div style="font-family:simple;font-size:35px;margin-top:0%;">
             <table>
                 <tr>
                     <td><i class="fa fa-terminal"></i></td>
@@ -65,7 +67,9 @@
 
 
     <img src="media/arrow2.png" style="height:13%;width:13%;margin-bottom:100px;margin-top:100px;">
+
     
+
     <div class="desc-title" id="about=me">About Me</div>
     <div class="desc-data mm">
         Hi ! I'm Sayan Bhowmik
@@ -77,20 +81,20 @@
         <br>
         <br> 
     
-    <div class="desc-title">Skills</div>
+    <div class="desc-title" style="float:center;">Skills</div>
     <div class="desc-data">
-    <div class="container">
-      
-          <div class="chart" data-percent="80">HTML5<br></div>
-          <div class="chart" data-percent="60">CSS3<br></div>
-        <div class="chart" data-percent="10">JS<br></div>
+    <center>
+        <div class="container" style="float:left;">
+            <div class="chart" data-percent="80">HTML5<br></div>
+            <div class="chart" data-percent="60">CSS3<br></div>
+            <div class="chart" data-percent="10">JS<br></div>
         </div>    
-          <div class="container">
-          <div class="chart" data-percent="70">C<br></div>
-          <div class="chart" data-percent="50">C++<br></div>
-          <div class="chart" data-percent="80">Python<br></div>
+        <div class="container">
+              <div class="chart" data-percent="70">C<br></div>
+              <div class="chart" data-percent="50">C++<br></div>
+              <div class="chart" data-percent="80">Python<br></div>
         </div>
-            
+    </center>    
             
         </div>
     
@@ -100,17 +104,44 @@
 
 </body>
 
-<script type="text/javascript"> // main animation
+<script type="text/javascript">
+    // main animation
     right = document.getElementById("right-wing");
     left = document.getElementById("left-wing");
+    up = document.getElementById("up");
+    down = document.getElementById("down");
+    right.style.display = "";
+    left.style.display = "";
+    counter = 1;
+
+    function magic_counter() {
+        counter++;
+        if (counter % 2 == 0) {
+            left.style.display = "none";
+            right.style.display = "";
+        } else {
+            right.style.display = "none";
+            left.style.display = "";
+        }
+    }
 
     function widener() {
         width = window.innerWidth;
+
         if (width < 1080) {
             left.style.width = "100%";
             right.style.width = "100%";
+            up.onclick = function () {
+                magic_counter()
+            };
+            down.onclick = function () {
+                magic_counter()
+            };
 
         } else {
+            right.style.display = "";
+            left.style.display = "";
+
             left.style.width = "50%";
             right.style.width = "50%";
             if (right.scrollTop > 250) {
@@ -131,30 +162,29 @@
             }
         }
     }
-    right.onscroll = function () {widener()};
-    window.onresize = function () {widener()};
-    down =  document.getElementById("down");
-    counter = 0;
-    function magic_counter() {
-        counter++;
-        document.getElementById("myname").innerHTML = counter;
-        document.getElementById("myname").innerHTML = counter;
-    }
 
+    right.onscroll = function () {
+        widener()
+    };
+    window.onresize = function () {
+        widener()
+    };
+    window.onload = function () {
+        widener()
+    };
 </script>
 <script type="text/javascript">
-$(function() {
-  $('.chart').easyPieChart({
-    scaleColor: "#212121",
-    lineWidth: 20,
-    lineCap: 'round',
-    barColor: '#189aa5',
-    trackColor: "#333232",
-    size: 180,
-    animate: 500
-  });
-});
-
+    $(function () {
+        $('.chart').easyPieChart({
+            scaleColor: "#212121"
+            , lineWidth: 20
+            , lineCap: 'round'
+            , barColor: '#189aa5'
+            , trackColor: "#333232"
+            , size: 180
+            , animate: 500
+        });
+    });
 </script>
 
 </html>
